@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
-const cors = require('cors');
+//const cors = require('cors');
 const authRoutes = require('./routes/auth');
 const User = require('./models/User');
 
@@ -9,8 +9,10 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors());
+//app.use(cors());
 app.use(express.json());
+const cors = require('cors');
+app.use(cors({ origin: 'https://onlinegatecse-web.onrender.com/' }));
 app.use('/uploads', express.static('uploads')); // Serve uploaded files
 
 // MongoDB Connection
