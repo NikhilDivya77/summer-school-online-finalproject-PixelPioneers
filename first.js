@@ -330,7 +330,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
   
         try {
-          const response = await fetch("http://localhost:5000/api/auth/signup", {
+          const response = await fetch("https://newgatecse.onrender.com/api/auth/signup", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -367,7 +367,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const password = document.getElementById("password").value;
   
         try {
-          const response = await fetch("http://localhost:5000/api/auth/login", {
+          const response = await fetch("https://newgatecse.onrender.com/api/auth/login", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
