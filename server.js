@@ -85,6 +85,17 @@ app.get('/api/progress', require('./middleware/auth'), async (req, res) => {
   }
 });
 
+// // Start Server
+const PORT = process.env.PORT || 6000;
+app.listen(PORT, () => {
+  console.log(`🚀 Server running at http://localhost:${PORT}`);
+});
+
+// Start Server
+app.listen(PORT, () => {
+  console.log(`🚀 Server running at http://localhost:${PORT}`);
+});
+
 // require('dotenv').config();
 // const express = require('express');
 // const mongoose = require('mongoose');
