@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         try {
             leaderboardBody.innerHTML = '<tr><td colspan="5" style="text-align: center;"><i class="fas fa-spinner fa-spin"></i> Loading leaderboard...</td></tr>';
             
-            const response = await fetch('http://localhost:5000/api/auth/leaderboard', {
+            const response = await fetch('https://newgatecse.onrender.com/api/auth/leaderboard', {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json'
