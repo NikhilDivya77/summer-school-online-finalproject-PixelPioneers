@@ -47,9 +47,14 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // 4. Logout Button
   const logoutBtn = document.getElementById("logoutBtn");
-  if (logoutBtn) {
-    logoutBtn.addEventListener("click", logout);
-  }
+  // if (logoutBtn) {
+  //   logoutBtn.addEventListener("click", logout);
+  // }
+  logoutBtn?.addEventListener('click', () => {
+        if (confirm('Are you sure you want to logout?')) {
+            localStorage.clear();
+            window.location.href = '/login.html';
+        }
 
   // 5. Navigation for Test Sections
   const sections = [
