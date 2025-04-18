@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Fetch progress data
     const fetchProgressData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/auth/progress', {
+        const response = await fetch('https://newgatecse.onrender.com/api/auth/progress', {
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
