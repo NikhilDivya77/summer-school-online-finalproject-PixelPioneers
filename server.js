@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 // const cors = require('cors');
 // app.use(cors({ origin: 'https://onlinegatecse-web.onrender.com/' }));
-// app.use('/uploads', express.static('uploads')); // Serve uploaded files
+app.use('/uploads', express.static('uploads')); // Serve uploaded files
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/gate_test', {
