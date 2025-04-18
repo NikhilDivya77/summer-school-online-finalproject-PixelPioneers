@@ -111,7 +111,7 @@ app.use('/uploads', express.static('uploads')); // Serve uploaded files
 
 // CORS Configuration
 const corsOptions = {
-  origin: ['https://newgatetest.onrender.com'], // Replace with your deployed frontend URL
+  origin: ['https://newgatetest.onrender.com'], // Your deployed frontend URL
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true, // If using cookies or auth headers
 };
@@ -185,12 +185,16 @@ app.get('/api/progress', require('./middleware/auth'), async (req, res) => {
 });
 
 // Start Server
-const PORT = process.env.PORT || 6000;
-app.listen(PORT, () => {
+const PORT = process.env.PORT || 5000;
+const server = app.listen(PORT, () => {
   console.log(`🚀 Server running at http://localhost:${PORT}`);
 });
 
-// Start Server
-app.listen(PORT, () => {
-  console.log(`🚀 Server running at http://localhost:${PORT}`);
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.error(`Port ${PORT} is already in use. Trying ${PORT + 1}...`);
+    server.listen(PORT + 1);
+  } else {
+    console.error('Server error:', err);
+  }
 });
