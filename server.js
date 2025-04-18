@@ -24,11 +24,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/gate_test
 // Routes
 app.use('/api/auth', authRoutes);
 
-const corsOptions = {
-  origin: ['http://localhost:3000', 'https://lambent-brioche-59ef7b.netlify.app/'], // Update with your frontend URL
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true, // If using cookies or auth headers
-};
+
 app.use(cors(corsOptions));
 
 // Save Test Progress Route
