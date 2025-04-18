@@ -432,7 +432,7 @@ async function calculateResult() {
         const token = localStorage.getItem('token');
         if (!token) throw new Error('No authentication token found');
 
-        const response = await fetch('http://localhost:5000/api/progress/save', {
+        const response = await fetch('https://newgatecse.onrender.com/api/progress/save', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -713,97 +713,8 @@ async function initTest() {
     displayCurrentQuestion();
 }
 
-// function setupReviewAnswers(questionResults) {
 
 
-//     const reviewBtn = document.getElementById('reviewBtn');
-//     if (!reviewBtn) return;
-
-//     reviewBtn.addEventListener('click', function() {
-//         // Scroll to the top of the page
-//         window.scrollTo({ top: 0, behavior: 'smooth' });
-
-//         const resultSummary = document.querySelector('.result-summary');
-//         if (resultSummary) resultSummary.style.display = 'none';
-
-//         const reviewContainer = document.createElement('div');
-//         reviewContainer.className = 'review-container';
-        
-//         reviewContainer.innerHTML = `
-//             <h3>Review All Answers</h3>
-//             <div class="review-questions">
-//                 ${questionResults.map(question => `
-//                     <div class="review-question ${question.attempted ? (question.correct ? 'correct' : 'incorrect') : 'unattempted'}">
-//                         <div class="review-question-header">
-//                             <div>
-//                                 <span class="question-number">Question ${question.number}</span>
-//                                 <span class="question-type" ${question.isMultiple ? 'data-type="MSQ"' : question.type === 'numerical' ? 'data-type="Numerical"' : 'data-type="MCQ"'}>
-//                                     ${question.type === 'numerical' ? 'Numerical' : question.isMultiple ? 'MSQ (Multiple Select)' : 'MCQ (Single Correct)'}
-//                                 </span>
-//                             </div>
-//                             <span class="time-spent">⏱️ ${formatTime(question.timeSpent)}</span>
-//                         </div>
-//                         <div class="review-question-content">
-//                             ${selectedQuestions[question.number - 1].image ? 
-//                                 `<img src="${getImagePath(selectedQuestions[question.number - 1].image)}" class="review-question-image">` : ''}
-//                             <p class="review-question-text">${selectedQuestions[question.number - 1].question}</p>
-//                         </div>
-//                         <div class="review-answer-section">
-//                             <div class="marks-info">
-//                                 <span>Max Marks: ${question.marks}</span>
-//                                 <span class="marks-obtained ${question.marksObtained >= 0 ? 'positive' : 'negative'}">
-//                                     ${question.marksObtained >= 0 ? '+' : ''}${question.marksObtained.toFixed(2)}
-//                                 </span>
-//                             </div>
-//                             <div class="user-answer">
-//                                 <strong>Your Answer:</strong>
-//                                 ${question.attempted ? 
-//                                     `<span class="${question.correct ? 'correct-answer' : 'incorrect-answer'}">${formatAnswer(question.userAnswer)}</span>` : 
-//                                     '<span class="unattempted">Not attempted</span>'}
-//                             </div>
-//                             <div class="correct-answer">
-//                                 <strong>Correct Answer:</strong>
-//                                 <span>${formatAnswer(question.correctAnswer)}</span>
-//                             </div>
-//                             ${!question.correct && question.attempted ? `
-//                                 <div class="explanation">
-//                                     <strong>Explanation:</strong>
-//                                     <p>${selectedQuestions[question.number - 1].explanation || 'No explanation available'}</p>
-//                                 </div>
-//                             ` : ''}
-//                         </div>
-//                     </div>
-//                 `).join('')}
-//             </div>
-//             <button id="backToResults" class="btn back-btn">Back to Results</button>
-//         `;
-
-//         const detailedResults = document.querySelector('.detailed-results');
-//         if (detailedResults) {
-//             detailedResults.innerHTML = '';
-//             detailedResults.appendChild(reviewContainer);
-//         }
-
-//         const backBtn = document.getElementById('backToResults');
-//         if (backBtn) {
-//             backBtn.addEventListener('click', function() {
-//                 if (reviewContainer.parentNode) {
-//                     reviewContainer.parentNode.removeChild(reviewContainer);
-//                 }
-                
-//                 const resultSummary = document.querySelector('.result-summary');
-//                 if (resultSummary) resultSummary.style.display = 'flex';
-                
-//                 const questionsGrid = document.querySelector('.questions-grid');
-//                 if (questionsGrid) {
-//                     questionsGrid.style.display = 'grid';
-//                 }
-//             });
-//         }
-//     });
-// }
-
-// Add styles
 
 function setupReviewAnswers(questionResults) {
     const reviewBtn = document.getElementById('reviewBtn');
