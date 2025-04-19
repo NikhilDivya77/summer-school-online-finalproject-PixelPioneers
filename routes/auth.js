@@ -221,7 +221,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const multer = require('multer');
 const path = require('path');
-const fs = require('fs');
+const fs = require('fs').promises;;
 const User = require('../models/User');
 const authMiddleware = require('../middleware/auth');
 
