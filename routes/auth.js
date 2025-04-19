@@ -440,8 +440,7 @@ router.post('/login', async (req, res) => {
 // });
 
 
-const fs = require('fs').promises;
-const path = require('path');
+
 
 // Profile Route
 router.get('/profile', authMiddleware, async (req, res) => {
