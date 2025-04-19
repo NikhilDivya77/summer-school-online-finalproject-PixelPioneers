@@ -724,6 +724,9 @@
 //     }
 // });
 
+");
+
+
 document.addEventListener("DOMContentLoaded", async () => {
     // Check if user is authenticated
     const token = localStorage.getItem("token");
@@ -810,7 +813,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             const file = e.target.files[0];
             if (!file) return;
 
-            // Validate file type
             if (!file.type.match("image.*")) {
                 Toastify({
                     text: "Please select a valid image file (JPEG, PNG, GIF).",
@@ -822,7 +824,6 @@ document.addEventListener("DOMContentLoaded", async () => {
                 return;
             }
 
-            // Validate file size (2MB limit)
             if (file.size > 2 * 1024 * 1024) {
                 Toastify({
                     text: "Image size should be less than 2MB.",
@@ -843,12 +844,10 @@ document.addEventListener("DOMContentLoaded", async () => {
                     uploadProgress.value = 0;
                 }
 
-                // Use XMLHttpRequest for real upload progress tracking
                 const xhr = new XMLHttpRequest();
                 xhr.open("PUT", "https://newgatecse.onrender.com/api/auth/profile", true);
                 xhr.setRequestHeader("Authorization", `Bearer ${token}`);
 
-                // Track upload progress
                 xhr.upload.onprogress = (event) => {
                     if (event.lengthComputable && uploadProgress) {
                         const percentComplete = (event.loaded / event.total) * 100;
@@ -856,7 +855,6 @@ document.addEventListener("DOMContentLoaded", async () => {
                     }
                 };
 
-                // Handle response
                 xhr.onload = () => {
                     if (xhr.status >= 200 && xhr.status < 300) {
                         try {
@@ -1053,7 +1051,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
                 const contentType = response.headers.get("content-type");
                 if (!contentType || !contentType.includes("application/json")) {
-                    throw new пиление Error("Server did not return a valid JSON response");
+                    throw new Error("Server did not return a valid JSON response");
                 }
 
                 const result = await response.json();
