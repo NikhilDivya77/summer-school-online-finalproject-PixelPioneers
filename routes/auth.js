@@ -360,12 +360,51 @@ router.post('/login', async (req, res) => {
   }
 });
 
+// // Profile Route
+// router.get('/profile', authMiddleware, async (req, res) => {
+//   try {
+//     const user = await User.findById(req.user.id).select('-password');
+//     if (!user) return res.status(404).json({ message: 'User not found' });
+//     res.json({ user: { ...user.toObject(), profilePic: user.profilePicUrl } });
+//   } catch (err) {
+//     console.error('Profile Error:', err);
+//     res.status(500).json({ message: 'Server error', error: err.message });
+//   }
+// });
+
+// // Update Profile Route
+// router.put('/profile', authMiddleware, upload.single('profilePic'), async (req, res) => {
+//   try {
+//     const user = await User.findById(req.user.id);
+//     if (!user) return res.status(404).json({ message: 'User not found' });
+
+//     if (req.file) {
+//       user.profilePic = req.file.filename;
+//     }
+
+//     if (req.body.name) {
+//       const newName = req.body.name.trim();
+//       if (newName.length < 2 || newName.length > 50) {
+//         return res.status(400).json({ message: 'Name must be between 2 and 50 characters' });
+//       }
+//       user.name = newName;
+//     }
+
+//     await user.save();
+
+//     res.json({ user: { ...user.toObject(), profilePic: user.profilePicUrl } });
+//   } catch (err) {
+//     console.error('Update Profile Error:', err);
+//     res.status(500).json({ message: 'Server error', error: err.message });
+//   }
+// });
+
 // Profile Route
 router.get('/profile', authMiddleware, async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select('-password');
     if (!user) return res.status(404).json({ message: 'User not found' });
-    res.json({ user: { ...user.toObject(), profilePic: user.profilePicUrl } });
+    res.json({ user: { ...user.toObject(), profilePicUrl: user.profilePicUrl || '' } });
   } catch (err) {
     console.error('Profile Error:', err);
     res.status(500).json({ message: 'Server error', error: err.message });
@@ -379,7 +418,8 @@ router.put('/profile', authMiddleware, upload.single('profilePic'), async (req, 
     if (!user) return res.status(404).json({ message: 'User not found' });
 
     if (req.file) {
-      user.profilePic = req.file.filename;
+      const fileUrl = `/uploads/${req.file.filename}`; // Construct full URL
+      user.profilePicUrl = fileUrl; // Use profilePicUrl instead of profilePic
     }
 
     if (req.body.name) {
@@ -392,7 +432,7 @@ router.put('/profile', authMiddleware, upload.single('profilePic'), async (req, 
 
     await user.save();
 
-    res.json({ user: { ...user.toObject(), profilePic: user.profilePicUrl } });
+    res.json({ user: { ...user.toObject(), profilePicUrl: user.profilePicUrl || '' } });
   } catch (err) {
     console.error('Update Profile Error:', err);
     res.status(500).json({ message: 'Server error', error: err.message });
