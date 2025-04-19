@@ -634,6 +634,10 @@ document.addEventListener("DOMContentLoaded", function () {
       loginBtn.addEventListener("click", async function () {
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
+
+        //chnage 
+         document.getElementById("email").value = "";
+            document.getElementById("password").value = "";
   
         try {
           const response = await fetch("https://newgatecse.onrender.com/api/auth/login", {
