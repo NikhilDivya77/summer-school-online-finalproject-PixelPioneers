@@ -972,6 +972,8 @@ window.addEventListener("click", function (event) {
 if (signupBtn) {
   signupBtn.addEventListener("click", async function () {
     const loadingDiv = showLoadingMessage();
+
+    setTimeout(async () => {
     const name = document.getElementById("signup-name").value;
     const email = document.getElementById("signup-email").value;
     const password = document.getElementById("signup-password").value;
@@ -1028,6 +1030,7 @@ if (signupBtn) {
       console.error("Signup error:", error);
       alert("Server error during signup. Try again later.");
     }
+    },0);
   });
 }
 
