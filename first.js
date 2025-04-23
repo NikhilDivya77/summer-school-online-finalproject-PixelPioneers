@@ -38,9 +38,7 @@ function showLoadingMessage() {
   loadingDiv.style.zIndex = "10000";
   loadingDiv.innerText = "Loading... Please wait";
   document.body.appendChild(loadingDiv);
-   requestAnimationFrame(() => {
-    loadingDiv.style.opacity = "1"; // Ensure visibility
-  });
+
   return loadingDiv;
 }
 
@@ -90,26 +88,27 @@ if (signupBtn) {
          document.getElementById("signup-form").reset();
 
     if (!name || !email || !password || !confirmPassword) {
-      alert("Please enter all the details.");
          hideLoadingMessage(loadingDiv);
+      alert("Please enter all the details.");
       return;
     }
 
     if (!email.includes("@") || !email.includes(".")) {
-      alert("Please enter a valid email address.");
          hideLoadingMessage(loadingDiv);
+      alert("Please enter a valid email address.");
+         
       return;
     }
 
     if (password.length < 6) {
-      alert("Password must be at least 6 characters.");
          hideLoadingMessage(loadingDiv);
+      alert("Password must be at least 6 characters.");
       return;
     }
 
     if (password !== confirmPassword) {
-      alert("Passwords do not match!");
          hideLoadingMessage(loadingDiv);
+      alert("Passwords do not match!");
       return;
     }
 
