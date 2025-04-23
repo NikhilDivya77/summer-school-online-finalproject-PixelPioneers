@@ -249,7 +249,22 @@ document.addEventListener("DOMContentLoaded", function () {
     /* ==========================
        "Learn More" Button Logic
     ========================== */
-    const learnMoreBtn = document.getElementById("learn-more-btn");
+    // const learnMoreBtn = document.getElementById("learn-more-btn");
+    // const extraDescription = document.getElementById("extra-description");
+  
+    // if (learnMoreBtn && extraDescription) {
+    //   learnMoreBtn.addEventListener("click", function () {
+    //     if (extraDescription.style.display === "none" || extraDescription.style.display === "") {
+    //       extraDescription.style.display = "block";
+    //       learnMoreBtn.textContent = "Show Less";
+    //       extraDescription.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    //     } else {
+    //       extraDescription.style.display = "none";
+    //       learnMoreBtn.textContent = "Learn More";
+    //     }
+    //   });
+    // }
+     const learnMoreBtn = document.getElementById("learn-more-btn");
     const extraDescription = document.getElementById("extra-description");
   
     if (learnMoreBtn && extraDescription) {
@@ -517,25 +532,25 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-document.addEventListener("DOMContentLoaded", function () {
-    /* ==========================
-       "Learn More" Button Logic
-    ========================== */
-    const learnMoreBtn = document.getElementById("learn-more-btn");
-    const extraDescription = document.getElementById("extra-description");
+// document.addEventListener("DOMContentLoaded", function () {
+//     /* ==========================
+//        "Learn More" Button Logic
+//     ========================== */
+//     const learnMoreBtn = document.getElementById("learn-more-btn");
+//     const extraDescription = document.getElementById("extra-description");
   
-    if (learnMoreBtn && extraDescription) {
-      learnMoreBtn.addEventListener("click", function () {
-        if (extraDescription.style.display === "none" || extraDescription.style.display === "") {
-          extraDescription.style.display = "block";
-          learnMoreBtn.textContent = "Show Less";
-          extraDescription.scrollIntoView({ behavior: "smooth", block: "nearest" });
-        } else {
-          extraDescription.style.display = "none";
-          learnMoreBtn.textContent = "Learn More";
-        }
-      });
-    }
+//     if (learnMoreBtn && extraDescription) {
+//       learnMoreBtn.addEventListener("click", function () {
+//         if (extraDescription.style.display === "none" || extraDescription.style.display === "") {
+//           extraDescription.style.display = "block";
+//           learnMoreBtn.textContent = "Show Less";
+//           extraDescription.scrollIntoView({ behavior: "smooth", block: "nearest" });
+//         } else {
+//           extraDescription.style.display = "none";
+//           learnMoreBtn.textContent = "Learn More";
+//         }
+//       });
+//     }
   
 //     /* ==========================
 //        Authentication Logic
