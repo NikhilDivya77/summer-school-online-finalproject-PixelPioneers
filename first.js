@@ -91,21 +91,25 @@ if (signupBtn) {
 
     if (!name || !email || !password || !confirmPassword) {
       alert("Please enter all the details.");
+         hideLoadingMessage(loadingDiv);
       return;
     }
 
     if (!email.includes("@") || !email.includes(".")) {
       alert("Please enter a valid email address.");
+         hideLoadingMessage(loadingDiv);
       return;
     }
 
     if (password.length < 6) {
       alert("Password must be at least 6 characters.");
+         hideLoadingMessage(loadingDiv);
       return;
     }
 
     if (password !== confirmPassword) {
       alert("Passwords do not match!");
+         hideLoadingMessage(loadingDiv);
       return;
     }
 
