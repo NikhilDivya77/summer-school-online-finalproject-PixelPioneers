@@ -288,6 +288,31 @@ document.addEventListener("DOMContentLoaded", function () {
     const signupBtn = document.getElementById("signup-btn");
     const closeBtn = document.querySelector(".close-btn");
     const signupPopup = document.getElementById("signup-popup");
+
+    Function to show loading message
+function showLoadingMessage() {
+  const loadingDiv = document.createElement("div");
+  loadingDiv.id = "loading-message";
+  loadingDiv.style.position = "fixed";
+  loadingDiv.style.top = "50%";
+  loadingDiv.style.left = "50%";
+  loadingDiv.style.transform = "translate(-50%, -50%)";
+  loadingDiv.style.background = "rgba(0, 0, 0, 0.7)";
+  loadingDiv.style.color = "white";
+  loadingDiv.style.padding = "20px";
+  loadingDiv.style.borderRadius = "5px";
+  loadingDiv.style.zIndex = "1000";
+  loadingDiv.innerText = "Loading... Please wait";
+  document.body.appendChild(loadingDiv);
+  return loadingDiv;
+}
+
+// Function to hide loading message
+function hideLoadingMessage(loadingDiv) {
+  if (loadingDiv) {
+    loadingDiv.remove();
+  }
+}
   
     // Open Signup Popup
     if (signupLink) {
@@ -322,7 +347,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const email = document.getElementById("signup-email").value;
         const password = document.getElementById("signup-password").value;
         const confirmPassword = document.getElementById("signup-confirm-password").value;
-  
+   const loadingDiv = showLoadingMessage();
         // Validation
         if (!name || !email || !password || !confirmPassword) {
           alert("Please enter all the details.");
@@ -354,7 +379,7 @@ document.addEventListener("DOMContentLoaded", function () {
           });
   
           const result = await response.json();
-  
+   hideLoadingMessage(loadingDiv);
           if (response.ok) {
             alert("Signup successful! You can now log in.");
             signupPopup.style.display = "none";
@@ -379,7 +404,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (loginBtn) {
       loginBtn.addEventListener("click", async function () {
         const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
+        const password = document.getElementById("password").value
+             const loadingDiv = showLoadingMessage();
   
         try {
           const response = await fetch("https://newgatecse.onrender.com/api/auth/login", {
@@ -391,7 +417,7 @@ document.addEventListener("DOMContentLoaded", function () {
           });
   
           const result = await response.json();
-  
+   hideLoadingMessage(loadingDiv);
           if (response.ok) {
             alert("Login successful!");
               // Reset login fields
