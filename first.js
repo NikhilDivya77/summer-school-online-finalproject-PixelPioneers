@@ -38,8 +38,9 @@ function showLoadingMessage() {
   loadingDiv.style.zIndex = "1000";
   loadingDiv.innerText = "Loading... Please wait";
   document.body.appendChild(loadingDiv);
-    // Trigger reflow to ensure immediate rendering
-  loadingDiv.offsetHeight; // Accessing offsetHeight forces a DOM reflow
+   requestAnimationFrame(() => {
+    loadingDiv.style.opacity = "1"; // Ensure visibility
+  });
   return loadingDiv;
 }
 
