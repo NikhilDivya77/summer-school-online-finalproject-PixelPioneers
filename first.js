@@ -893,7 +893,24 @@
 //       });
 //     });
 //   });
+    /* ==========================
+       "Learn More" Button Logic
+    ========================== */
+    const learnMoreBtn = document.getElementById("learn-more-btn");
+    const extraDescription = document.getElementById("extra-description");
 
+    if (learnMoreBtn && extraDescription) {
+        learnMoreBtn.addEventListener("click", function () {
+            if (extraDescription.style.display === "none" || extraDescription.style.display === "") {
+                extraDescription.style.display = "block";
+                learnMoreBtn.textContent = "Show Less";
+                extraDescription.scrollIntoView({ behavior: "smooth", block: "nearest" });
+            } else {
+                extraDescription.style.display = "none";
+                learnMoreBtn.textContent = "Learn More";
+            }
+        });
+    }
 const loginBtn = document.getElementById("login-btn");
 const signupLink = document.getElementById("signup-link");
 const signupBtn = document.getElementById("signup-btn");
@@ -954,6 +971,7 @@ window.addEventListener("click", function (event) {
 // Signup with Backend
 if (signupBtn) {
   signupBtn.addEventListener("click", async function () {
+    const loadingDiv = showLoadingMessage();
     const name = document.getElementById("signup-name").value;
     const email = document.getElementById("signup-email").value;
     const password = document.getElementById("signup-password").value;
@@ -979,7 +997,7 @@ if (signupBtn) {
       return;
     }
 
-    const loadingDiv = showLoadingMessage();
+  
 
     try {
       const response = await fetch("https://newgatecse.onrender.com/api/auth/signup", {
