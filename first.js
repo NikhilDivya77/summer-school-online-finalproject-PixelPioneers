@@ -35,7 +35,7 @@ function showLoadingMessage() {
   loadingDiv.style.color = "white";
   loadingDiv.style.padding = "20px";
   loadingDiv.style.borderRadius = "5px";
-  loadingDiv.style.zIndex = "1000";
+  loadingDiv.style.zIndex = "10000";
   loadingDiv.innerText = "Loading... Please wait";
   document.body.appendChild(loadingDiv);
    requestAnimationFrame(() => {
@@ -87,6 +87,7 @@ if (signupBtn) {
     const email = document.getElementById("signup-email").value;
     const password = document.getElementById("signup-password").value;
     const confirmPassword = document.getElementById("signup-confirm-password").value;
+         document.getElementById("signup-form").reset();
 
     if (!name || !email || !password || !confirmPassword) {
       alert("Please enter all the details.");
@@ -137,6 +138,7 @@ if (signupBtn) {
     } catch (error) {
       hideLoadingMessage(loadingDiv);
       console.error("Signup error:", error);
+         document.getElementById("signup-form").reset();
       alert("Server error during signup. Try again later.");
     }
     },0);
