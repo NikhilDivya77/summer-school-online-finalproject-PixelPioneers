@@ -121,7 +121,7 @@ nav {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 0.5rem;
+    gap: 1rem; /* Increased distance between links */
     align-items: center;
     flex-wrap: wrap;
 }
@@ -178,7 +178,7 @@ nav {
         background-color: var(--white);
         box-shadow: var(--shadow);
         padding: 1rem 15px;
-        flex-direction: column; /* Changed to vertical layout */
+        flex-direction: column; /* Vertical layout */
         align-items: center;
         z-index: 1001;
     }
@@ -188,7 +188,7 @@ nav {
     }
 
     .nav-links li {
-        margin: 0.5rem 0; /* Vertical spacing between items */
+        margin: 0.5rem 0; /* Vertical spacing */
     }
 
     .nav-links li a {
@@ -200,7 +200,7 @@ nav {
     .nav-links li .btn {
         padding: 8px 16px;
         font-size: 0.85rem;
-        width: 100%; /* Ensure button takes full width */
+        width: 100%;
         text-align: center;
         justify-content: center;
     }
@@ -417,39 +417,56 @@ nav {
     gap: 2rem;
     margin-top: 2rem;
     background: linear-gradient(135deg, #e6f0fa 0%, #ffffff 100%);
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
+    justify-content: center; /* Center the content */
 }
 
 .founder-info:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
 .founder-image {
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid var(--primary);
-    box-shadow: 0 0 10px rgba(67, 97, 238, 0.3);
+    border: 4px solid var(--primary);
+    box-shadow: 0 0 15px rgba(67, 97, 238, 0.4);
+    transition: var(--transition);
+}
+
+.founder-info:hover .founder-image {
+    transform: scale(1.05);
+}
+
+.founder-details {
+    flex: 1;
+    text-align: left; /* Align text to the left for better readability */
 }
 
 .founder-details h3 {
     color: var(--dark);
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .founder-details p {
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
     color: var(--gray);
+    font-size: 1.1rem;
 }
 
 .founder-details p strong {
-    color: var(--dark);
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 1.2rem;
 }
 
 /* Auth Section */
@@ -845,12 +862,17 @@ footer p {
     .founder-info {
         flex-direction: column;
         text-align: center;
+        padding: 1.5rem;
     }
 
     .founder-image {
-        width: 120px;
-        height: 120px;
-        margin: 0 auto;
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 1.5rem;
+    }
+
+    .founder-details {
+        text-align: center;
     }
 
     .contact-content {
@@ -910,12 +932,12 @@ footer p {
     }
 
     .founder-image {
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
     }
 
     .founder-details h3 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
 
     #contact-form,
