@@ -139,3 +139,31 @@ document.getElementById('progress-link')?.addEventListener('click', function(e) 
     loadProgressData();
   }
 });
+
+  // Toggle sidebar for mobile
+        const hamburger = document.querySelector('.hamburger');
+        const sidebar = document.querySelector('.sidebar');
+        const container = document.querySelector('.container');
+
+        if (hamburger && sidebar && container) {
+            hamburger.addEventListener('click', () => {
+                sidebar.classList.toggle('active');
+                container.classList.toggle('sidebar-open');
+            });
+
+            // Close sidebar when clicking a link or button
+            sidebar.querySelectorAll('a, button').forEach(link => {
+                link.addEventListener('click', () => {
+                    sidebar.classList.add('active');
+                    container.classList.remove('sidebar-open');
+                });
+            });
+
+            // Close sidebar when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!sidebar.contains(e.target) && !hamburger.contains(e.target)) {
+                    sidebar.classList.add('active');
+                    container.classList.remove('sidebar-open');
+                }
+            });
+        }
