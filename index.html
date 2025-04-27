@@ -172,7 +172,7 @@
                 <!-- Contact Info -->
                 <div class="contact-info">
                     <h3>Get in Touch</h3>
-                    <p><i class="fas fa-envelope"></i> <strong>Email:</strong> support@GateExpress.com</p>
+                    <p><i class="fas fa-envelope"></i> <strong>Email:</strong>GateExpresstest@gmail.com</p>
                     <p><i class="fas fa-phone"></i> <strong>Phone:</strong> +91 98765 43210</p>
                     <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> 123, Tech Park, Bangalore, India</p>
 
@@ -193,45 +193,6 @@
             <p>© Gate CS Online Test Platform. All Rights Reserved.</p>
         </div>
     </footer>
-
-    <script>
-        // Toggle mobile menu
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        if (hamburger && navLinks) {
-            hamburger.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-            });
-
-            // Close mobile menu when clicking a link
-            navLinks.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                });
-            });
-        }
-
-        // Show/hide extra description on Learn More button click
-        const learnMoreBtn = document.getElementById('learn-more-btn');
-        const extraDescription = document.getElementById('extra-description');
-        if (learnMoreBtn && extraDescription) {
-            learnMoreBtn.addEventListener('click', () => {
-                if (window.innerWidth <= 768) {
-                    extraDescription.style.display = extraDescription.style.display === 'block' ? 'none' : 'block';
-                    learnMoreBtn.textContent = extraDescription.style.display === 'block' ? 'Hide Details' : 'Learn More';
-                } else {
-                    extraDescription.style.display = 'block';
-                }
-            });
-
-            // Hide extra description on larger screens if shown
-            window.addEventListener('resize', () => {
-                if (window.innerWidth > 768) {
-                    extraDescription.style.display = 'none';
-                    learnMoreBtn.textContent = 'Learn More';
-                }
-            });
-        }
-    </script>
+    <script src="./first.js"></script>
 </body>
 </html>
