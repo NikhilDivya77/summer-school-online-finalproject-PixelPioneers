@@ -22,6 +22,21 @@ body {
     overflow-x: hidden;
 }
 
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--primary-color);
+    padding: 10px;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
+    background: white;
+    border-radius: 50%;
+    box-shadow: var(--card-shadow);
+}
+
 .sidebar {
     width: 280px;
     height: 100vh;
@@ -34,7 +49,6 @@ body {
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease;
-    transform: translateX(0);
     z-index: 1000;
 }
 
@@ -130,27 +144,16 @@ body {
     margin-right: 8px;
 }
 
-.hamburger {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: var(--primary-color);
-    padding: 10px;
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    z-index: 1001;
-    background: white;
-    border-radius: 50%;
-    box-shadow: var(--card-shadow);
-}
-
 .container {
     margin-left: 280px;
     padding: 30px;
     width: calc(100% - 280px);
     min-height: 100vh;
-    transition: margin-left 0.3s ease;
+}
+
+.container.sidebar-open {
+    margin-left: 0;
+    width: 100%;
 }
 
 .content {
@@ -296,6 +299,11 @@ body {
         margin-left: 0;
         width: 100%;
         padding: 70px 15px 15px;
+    }
+
+    .container.sidebar-open {
+        margin-left: 0;
+        width: 100%;
     }
 
     .header {
