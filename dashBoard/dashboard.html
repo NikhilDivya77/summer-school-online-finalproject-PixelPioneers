@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./profile.css">
 </head>
 <body>
+    <div class="hamburger"><i class="fas fa-bars"></i></div>
     <div class="sidebar">
         <h2>GATE EXPRESS</h2>
         <a href="#" class="active">
@@ -35,7 +36,7 @@
                 <h1>GATE Computer Science Engineering (CSE) 2026 Mock Test Series</h1>
             </div>
             <p class="course-info">
-                <i class="fas fa-users"></i> 49,879 students learning this week
+                <i class="fas fa-users"></i> 100 students learning this week
             </p>
             <div class="boxes-container">
                 <div id="section1" class="section1 BOX">
@@ -66,5 +67,30 @@
 
     <script src="../first.js"></script>
     <script src="./dashboard.js"></script>
+    <script>
+        // Toggle mobile sidebar
+        const hamburger = document.querySelector('.hamburger');
+        const sidebar = document.querySelector('.sidebar');
+        if (hamburger && sidebar) {
+            hamburger.addEventListener('click', () => {
+                sidebar.classList.toggle('active');
+            });
+
+            // Close sidebar when clicking a link
+            sidebar.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    sidebar.classList.remove('active');
+                });
+            });
+
+            // Close sidebar when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!sidebar.contains(e.target) && !hamburger.contains(e.target)) {
+                    sidebar.classList.remove('active');
+                }
+            });
+        }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9370973ce8ec82a5',t:'MTc0NTc4MDcyMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
 </html>
