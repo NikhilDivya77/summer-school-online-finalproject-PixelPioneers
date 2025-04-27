@@ -16,10 +16,10 @@
 }
 
 body {
-    display: flex;
+    margin: 0;
     background-color: #f5f7ff;
     color: var(--text-color);
-    flex-direction: column; /* Ensure body stacks elements on mobile */
+    overflow-x: hidden;
 }
 
 .sidebar {
@@ -29,9 +29,17 @@ body {
     padding: 25px 20px;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
     position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
     flex-direction: column;
-    transition: var(--transition);
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+    z-index: 1000;
+}
+
+.sidebar.active {
+    transform: translateX(-100%);
 }
 
 .sidebar h2 {
@@ -122,11 +130,27 @@ body {
     margin-right: 8px;
 }
 
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--primary-color);
+    padding: 10px;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
+    background: white;
+    border-radius: 50%;
+    box-shadow: var(--card-shadow);
+}
+
 .container {
     margin-left: 280px;
     padding: 30px;
     width: calc(100% - 280px);
     min-height: 100vh;
+    transition: margin-left 0.3s ease;
 }
 
 .content {
@@ -255,68 +279,23 @@ body {
     font-weight: 500;
 }
 
-/* Hamburger menu for mobile */
-.hamburger {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: var(--primary-color);
-    padding: 10px;
-}
-
 @media (max-width: 768px) {
-    body {
-        flex-direction: column;
-    }
-
     .hamburger {
         display: block;
-        position: fixed;
-        top: 15px;
-        left: 15px;
-        z-index: 1001;
     }
 
     .sidebar {
-        width: 100%;
-        height: auto;
-        position: fixed;
-        top: 0;
-        left: -100%; /* Hide sidebar off-screen by default */
-        flex-direction: column;
-        padding: 60px 20px 20px;
-        z-index: 1000;
-        transition: left 0.3s ease;
+        transform: translateX(-100%);
     }
 
     .sidebar.active {
-        left: 0; /* Show sidebar when active */
-    }
-
-    .sidebar h2 {
-        margin-bottom: 20px;
-        font-size: 20px;
-    }
-
-    .sidebar a {
-        padding: 10px 15px;
-        margin: 5px 0;
-        font-size: 14px;
-    }
-
-    .sidebar a i {
-        font-size: 16px;
-    }
-
-    .logout-btn {
-        padding: 10px;
-        font-size: 14px;
+        transform: translateX(0);
     }
 
     .container {
         margin-left: 0;
         width: 100%;
-        padding: 70px 15px 15px; /* Adjust padding for hamburger menu */
+        padding: 70px 15px 15px;
     }
 
     .header {
@@ -374,24 +353,6 @@ body {
         top: 10px;
         left: 10px;
         font-size: 20px;
-    }
-
-    .sidebar {
-        padding-top: 50px;
-    }
-
-    .sidebar h2 {
-        font-size: 18px;
-    }
-
-    .sidebar a {
-        padding: 8px 12px;
-        font-size: 13px;
-    }
-
-    .logout-btn {
-        padding: 8px;
-        font-size: 13px;
     }
 
     .container {
