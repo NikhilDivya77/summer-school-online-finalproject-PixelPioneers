@@ -4,7 +4,21 @@
     ========================== */
     const learnMoreBtn = document.getElementById("learn-more-btn");
     const extraDescription = document.getElementById("extra-description");
+ // Toggle mobile menu
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        if (hamburger && navLinks) {
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
 
+            // Close mobile menu when clicking a link
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
+            });
+        }
     if (learnMoreBtn && extraDescription) {
         learnMoreBtn.addEventListener("click", function () {
             if (extraDescription.style.display === "none" || extraDescription.style.display === "") {
