@@ -121,7 +121,7 @@ nav {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 1.5rem;
+    gap: 1rem;
     align-items: center;
     flex-wrap: wrap;
 }
@@ -133,6 +133,7 @@ nav {
     min-height: 44px;
     display: inline-flex;
     align-items: center;
+    font-size: 1rem;
 }
 
 .nav-links li a:hover {
@@ -180,8 +181,6 @@ nav {
         justify-content: center;
         flex-wrap: nowrap;
         z-index: 1001;
-        overflow-x: auto;
-        white-space: nowrap;
     }
 
     .nav-links.active {
@@ -189,18 +188,30 @@ nav {
     }
 
     .nav-links li {
-        margin: 0 1rem;
+        margin: 0 0.5rem;
     }
 
     .nav-links li a {
-        padding: 10px 15px;
-        font-size: 1.1rem;
+        font-size: 0.9rem;
+        padding: 8px 12px;
         white-space: nowrap;
     }
 
-    .nav-links li a:hover {
-        color: var(--primary);
-        background-color: transparent;
+    .nav-links li .btn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links li a {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+
+    .nav-links li .btn {
+        padding: 6px 12px;
+        font-size: 0.75rem;
     }
 }
 
@@ -665,15 +676,23 @@ nav {
     flex: 1;
     min-width: 300px;
     max-width: 100%;
-    background-color: var(--white);
+    background: linear-gradient(135deg, #e6f0fa 0%, #ffffff 100%);
     padding: 2rem;
     border-radius: 10px;
     box-shadow: var(--shadow);
+    border-left: 4px solid var(--primary);
+    transition: var(--transition);
+}
+
+.contact-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .contact-info h3 {
     color: var(--dark);
     margin-bottom: 1.5rem;
+    font-size: 1.8rem;
     position: relative;
     padding-bottom: 10px;
 }
@@ -689,26 +708,30 @@ nav {
 }
 
 .contact-info p {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
     display: flex;
     align-items: center;
-    gap: 0.8rem;
-    text-align: left;
+    gap: 1rem;
+    font-size: 1rem;
+    color: var(--dark);
 }
 
 .contact-info p strong {
-    min-width: 80px;
+    min-width: 90px;
+    font-weight: 600;
+    color: var(--primary);
 }
 
 .contact-info i {
     color: var(--primary);
     width: 24px;
     text-align: center;
+    font-size: 1.2rem;
 }
 
 .social-links {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     margin-top: 2rem;
     justify-content: center;
 }
@@ -722,11 +745,13 @@ nav {
     background-color: var(--light);
     border-radius: 50%;
     transition: var(--transition);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .social-links a:hover {
     background-color: var(--primary);
     transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(67, 97, 238, 0.3);
 }
 
 .social-links a:hover img {
@@ -836,6 +861,10 @@ footer p {
         max-width: 100%;
     }
 
+    .contact-info h3 {
+        font-size: 1.5rem;
+    }
+
     .contact-info p {
         font-size: 0.95rem;
     }
@@ -858,10 +887,6 @@ footer p {
 
     .hamburger {
         font-size: 1.8rem;
-    }
-
-    .nav-links {
-        padding: 1rem 10px;
     }
 
     #hero-text h1 {
@@ -892,6 +917,10 @@ footer p {
     #contact-form,
     .contact-info {
         padding: 1rem;
+    }
+
+    .contact-info h3 {
+        font-size: 1.3rem;
     }
 }
 
