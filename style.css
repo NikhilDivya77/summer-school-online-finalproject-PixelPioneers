@@ -163,10 +163,6 @@ nav {
     padding: 5px;
 }
 
-.nav-links {
-    display: flex;
-}
-
 @media (max-width: 768px) {
     .hamburger {
         display: block;
@@ -174,16 +170,15 @@ nav {
 
     .nav-links {
         display: none;
-        position: absolute;
+        position: fixed;
         top: 70px;
-        right: 15px;
+        left: 0;
+        width: 100%;
         background-color: var(--white);
         box-shadow: var(--shadow);
-        width: 200px;
-        padding: 1rem;
-        border-radius: 5px;
-        flex-direction: column;
-        gap: 0.5rem;
+        padding: 1rem 15px;
+        justify-content: center;
+        flex-wrap: nowrap;
         z-index: 1001;
     }
 
@@ -192,18 +187,17 @@ nav {
     }
 
     .nav-links li {
-        width: 100%;
+        margin: 0 1rem;
     }
 
     .nav-links li a {
-        display: block;
-        padding: 10px;
+        padding: 10px 15px;
+        font-size: 1.1rem;
     }
 
     .nav-links li a:hover {
         color: var(--primary);
-        background-color: var(--light);
-        border-radius: 3px;
+        background-color: transparent;
     }
 }
 
@@ -864,8 +858,8 @@ footer p {
     }
 
     .nav-links {
-        width: 150px;
-        top: 65px;
+        width: 100%;
+        padding: 1rem 10px;
     }
 
     #hero-text h1 {
