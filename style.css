@@ -734,7 +734,6 @@ footer p {
     100% { transform: translateY(0px); }
 }
  */
-
 :root {
     --primary: #4361ee;
     --secondary: #3f37c9;
@@ -1123,6 +1122,48 @@ nav ul li a:hover::after {
     margin-left: -1em;
 }
 
+/* Founder Info Styling */
+.founder-info {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    background: linear-gradient(135deg, #e6f0fa 0%, #ffffff 100%);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+}
+
+.founder-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.founder-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary);
+    box-shadow: 0 0 10px rgba(67, 97, 238, 0.3);
+}
+
+.founder-details h3 {
+    color: var(--dark);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.founder-details p {
+    margin-bottom: 0.8rem;
+    color: var(--gray);
+}
+
+.founder-details p strong {
+    color: var(--dark);
+}
+
 /* Auth Section */
 #auth-section {
     padding: 80px 0;
@@ -1298,11 +1339,16 @@ nav ul li a:hover::after {
     border-radius: 2px;
 }
 
+#contact p {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
 .contact-content {
     display: flex;
     gap: 3rem;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 #contact-form {
@@ -1324,6 +1370,7 @@ nav ul li a:hover::after {
     border-radius: 8px;
     font-size: 1rem;
     transition: var(--transition);
+    width: 100%;
 }
 
 #contact-form textarea {
@@ -1369,6 +1416,7 @@ nav ul li a:hover::after {
     display: flex;
     align-items: center;
     gap: 0.8rem;
+    text-align: left;
 }
 
 .contact-info p strong {
@@ -1385,6 +1433,7 @@ nav ul li a:hover::after {
     display: flex;
     gap: 1rem;
     margin-top: 2rem;
+    justify-content: center;
 }
 
 .social-links a {
@@ -1504,6 +1553,36 @@ footer p {
         font-size: 0.9rem;
         padding: 1rem;
     }
+
+    .founder-info {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .founder-image {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto;
+    }
+
+    .contact-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    #contact-form,
+    .contact-info {
+        min-width: 100%;
+        padding: 1.5rem;
+    }
+
+    .contact-info p {
+        font-size: 0.95rem;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 576px) {
@@ -1542,9 +1621,13 @@ footer p {
         padding: 1.5rem;
     }
 
-    .contact-content {
-        flex-direction: column;
-        gap: 2rem;
+    .founder-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .founder-details h3 {
+        font-size: 1.5rem;
     }
 }
 
