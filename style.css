@@ -178,8 +178,8 @@ nav {
         background-color: var(--white);
         box-shadow: var(--shadow);
         padding: 1rem 15px;
-        justify-content: center;
-        flex-wrap: nowrap;
+        flex-direction: column; /* Changed to vertical layout */
+        align-items: center;
         z-index: 1001;
     }
 
@@ -188,30 +188,34 @@ nav {
     }
 
     .nav-links li {
-        margin: 0 0.3rem;
+        margin: 0.5rem 0; /* Vertical spacing between items */
     }
 
     .nav-links li a {
         font-size: 0.9rem;
-        padding: 6px 10px;
+        padding: 8px 12px;
         white-space: nowrap;
     }
 
     .nav-links li .btn {
-        padding: 6px 12px;
+        padding: 8px 16px;
         font-size: 0.85rem;
+        width: 100%; /* Ensure button takes full width */
+        text-align: center;
+        justify-content: center;
     }
 }
 
 @media (max-width: 480px) {
     .nav-links li a {
         font-size: 0.8rem;
-        padding: 4px 8px;
+        padding: 6px 10px;
     }
 
     .nav-links li .btn {
-        padding: 4px 10px;
+        padding: 6px 12px;
         font-size: 0.75rem;
+        width: 100%;
     }
 }
 
