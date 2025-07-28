@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Online Gate Test Platform</title>
     <link rel="icon" type="image/png" sizes="16x16" href="./test.jpeg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -17,10 +17,14 @@
         <div class="container">
             <nav>
                 <img src="https://tse2.mm.bing.net/th?id=OIP.er6m3ihtfCBF9LFNAV-ERwHaC3&pid=Api&P=0&h=180" alt="Brand Logo" id="brand-logo">
-                <ul>
+                <button class="menu-btn" id="menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul id="nav-menu">
                     <li><a href="#hero-section">Home</a></li>
                     <li><a href="#features">Features</a></li>
                     <li><a href="#about-us">About</a></li>
+                    <li><a href="#team">Team</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="#auth-section" class="btn">Login / Signup</a></li>
                 </ul>
@@ -53,7 +57,7 @@
                 </p>
             </div>
             <div id="hero-image">
-                <img src="imga1.png" alt="Online Testing Illustration" class="floating">
+                <img src="imga1.png" alt="Online Testing Illustration" class="floating" loading="lazy">
             </div>
         </div>
     </section>
@@ -64,22 +68,22 @@
             <h1>Why Choose Gate Express Test?</h1>
             <div class="features-grid">
                 <div class="feature-box">
-                    <img src="https://cdn-icons-png.flaticon.com/512/1019/1019709.png" alt="Subject-Wise Tests">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1019/1019709.png" alt="Subject-Wise Tests" loading="lazy">
                     <h3>Subject-Wise & Topic-Wise Quizzes</h3>
                     <p>Practice key subjects or focus on specific topics to strengthen your concepts with our comprehensive question bank.</p>
                 </div>
                 <div class="feature-box">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2518/2518048.png" alt="Accuracy Calculation">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2518/2518048.png" alt="Accuracy Calculation" loading="lazy">
                     <h3>Accuracy & Performance Analysis</h3>
                     <p>Track your accuracy, speed, and improvement over time with detailed reports and analytics.</p>
                 </div>
                 <div class="feature-box">
-                    <img src="https://cdn-icons-png.flaticon.com/512/1157/1157109.png" alt="Leaderboard">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1157/1157109.png" alt="Leaderboard" loading="lazy">
                     <h3>Leaderboard & Rankings</h3>
                     <p>Compete with peers and climb the leaderboard to see where you stand nationally.</p>
                 </div>
                 <div class="feature-box">
-                    <img src="https://cdn-icons-png.flaticon.com/512/906/906175.png" alt="Mock Tests">
+                    <img src="https://cdn-icons-png.flaticon.com/512/906/906175.png" alt="Mock Tests" loading="lazy">
                     <h3>Full-Length Mock Tests</h3>
                     <p>Simulate real exam conditions with expert-designed mock tests that match GATE patterns.</p>
                 </div>
@@ -111,116 +115,116 @@
         </div>
     </section>
 
+    <!-- Team Section -->
+    <section id="team" class="team-section">
+        <div class="container">
+            <h1>Our <span class="highlight">Team</span></h1>
+            <p class="section-subtitle">The brilliant minds behind Gate Express</p>
+            
+            <div class="team-row">
+                <!-- Developer 1 -->
+                <div class="team-member">
+                    <div class="member-image-container">
+                        <div class="member-image">
+                            <img src="./nikhilNEW.jpg" alt="Nikhil Singh Katiyar" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Nikhil Singh Katiyar</h3>
+                        <p class="role">Lead Developer</p>
+                        <p class="bio">Indian Institute Of Information Technology Manipur</p>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/nikhil-divya77" target="_blank">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://www.github.com/NikhilDivya77" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="mailto:nikhildivya0777@gmail.com">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-<!-- Team Section -->
-<section id="team" class="team-section">
-    <div class="container">
-        <h1>Our <span class="highlight">Team</span></h1>
-        <p class="section-subtitle">The brilliant minds behind Gate Express</p>
-        
-        <div class="team-row">
-            <!-- Developer 1 -->
-            <div class="team-member">
-                <div class="member-image-container">
-                    <div class="member-image">
-                        <img src="./nikhilNEW.jpg" alt="Nikhil Singh Katiyar">
+                <!-- Developer 2 -->
+                <div class="team-member">
+                    <div class="member-image-container">
+                        <div class="member-image">
+                            <img src="./tushar.jpg" alt="Tushar Navneet" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Tushar Navneet</h3>
+                        <p class="role">Project Developer</p>
+                        <p class="bio">Indian Institute Of Information Technology Manipur</p>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/tusharnavneet" target="_blank">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://www.github.com/tusharnavneet" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="mailto:tusharnavneet3@gmail.com">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="member-info">
-                    <h3>Nikhil Singh Katiyar</h3>
-                    <p class="role">Lead Developer</p>
-                    <p class="bio">Indian Institute Of Information Technology Manipur</p>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/nikhil-divya77" target="_blank">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://www.github.com/NikhilDivya77" target="_blank">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="mailto:nikhildivya0777@gmail.com">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Developer 2 -->
-            <div class="team-member">
-                <div class="member-image-container">
-                    <div class="member-image">
-                        <img src="./tushar.jpg" alt="Tushar Navneet">
+                <!-- Developer 3 -->
+                <div class="team-member">
+                    <div class="member-image-container">
+                        <div class="member-image">
+                            <img src="./harsha.jpg" alt="Manukonda Harshavardhan Reddy" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Manukonda Harshavardhan Reddy</h3>
+                        <p class="role">Project Developer</p>
+                        <p class="bio">Indian Institute Of Information Technology Manipur</p>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/harsha-vardhan-reddy-manukonda-6751b2356" target="_blank">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://www.github.com/Harsha2581" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="mailto:harshareddy2581@gmail.com">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="member-info">
-                    <h3>Tushar Navneet</h3>
-                    <p class="role">Project Developer</p>
-                    <p class="bio">Indian Institute Of Information Technology Manipur</p>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/tusharnavneet" target="_blank">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://www.github.com/tusharnavneet" target="_blank">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="mailto:tusharnavneet3@gmail.com">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Developer 3 -->
-            <div class="team-member">
-                <div class="member-image-container">
-                    <div class="member-image">
-                        <img src="./harsha.jpg" alt="Manukonda Harshavardhan Reddy">
+                <!-- Developer 4 -->
+                <div class="team-member">
+                    <div class="member-image-container">
+                        <div class="member-image">
+                            <img src="./poorvi.jpg" alt="Poorvi Kamat" loading="lazy">
+                        </div>
                     </div>
-                </div>
-                <div class="member-info">
-                    <h3>Manukonda Harshavardhan Reddy</h3>
-                    <p class="role">Project Developer</p>
-                    <p class="bio">Indian Institute Of Information Technology Manipur</p>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/harsha-vardhan-reddy-manukonda-6751b2356" target="_blank">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://www.github.com/Harsha2581" target="_blank">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="mailto:harshareddy2581@gmail.com">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Developer 4 -->
-            <div class="team-member">
-                <div class="member-image-container">
-                    <div class="member-image">
-                        <img src="./poorvi.jpg" alt="Poorvi Kamat">
-                    </div>
-                </div>
-                <div class="member-info">
-                    <h3>Poorvi Kamat</h3>
-                    <p class="role">Project Developer</p>
-                    <p class="bio">Manipal Institute Of Technology Bengaluru</p>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/" target="_blank">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://www.github.com/" target="_blank">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="mailto:poorvikamat05@gmail.com">
-                            <i class="fas fa-envelope"></i>
-                        </a>
+                    <div class="member-info">
+                        <h3>Poorvi Kamat</h3>
+                        <p class="role">Project Developer</p>
+                        <p class="bio">Manipal Institute Of Technology Bengaluru</p>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/" target="_blank">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://www.github.com/" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="mailto:poorvikamat05@gmail.com">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
     <!-- Login/Signup Section -->
     <section id="auth-section">
         <div class="container">
@@ -282,9 +286,15 @@
 
                     <!-- Social Media Links -->
                     <div class="social-links">
-                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733549.png" alt="Facebook"></a>
-                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111465.png" alt="LinkedIn"></a>
-                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+                        <a href="https://www.facebook.com/" aria-label="Facebook">
+                            <img src="https://cdn-icons-png.flaticon.com/512/733/733549.png" alt="Facebook" loading="lazy">
+                        </a>
+                        <a href="https://www.linkedin.in/" aria-label="LinkedIn">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111465.png" alt="LinkedIn" loading="lazy">
+                        </a>
+                        <a href="https://www.instagram.com/" aria-label="Instagram">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" loading="lazy">
+                        </a>
                     </div>
                 </div>
             </div>
@@ -298,6 +308,56 @@
         </div>
     </footer>
 
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('#nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Learn more button functionality
+        const learnMoreBtn = document.getElementById('learn-more-btn');
+        const extraDescription = document.getElementById('extra-description');
+        
+        learnMoreBtn.addEventListener('click', () => {
+            if (extraDescription.style.display === 'none' || !extraDescription.style.display) {
+                extraDescription.style.display = 'block';
+                learnMoreBtn.textContent = 'Show Less';
+            } else {
+                extraDescription.style.display = 'none';
+                learnMoreBtn.textContent = 'Learn More';
+            }
+        });
+        
+        // Signup popup functionality
+        const signupLink = document.getElementById('signup-link');
+        const signupPopup = document.getElementById('signup-popup');
+        const closeBtn = document.querySelector('.close-btn');
+        
+        signupLink.addEventListener('click', () => {
+            signupPopup.style.display = 'flex';
+        });
+        
+        closeBtn.addEventListener('click', () => {
+            signupPopup.style.display = 'none';
+        });
+        
+        // Close popup when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === signupPopup) {
+                signupPopup.style.display = 'none';
+            }
+        });
+    </script>
     <script src="./first.js"></script>
 </body>
 </html>
